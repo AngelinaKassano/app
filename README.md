@@ -1,107 +1,50 @@
-# This repo is no longer maintained. Consider using `npm init vite` and selecting the `datletik` option or — if you want a full-fledged app framework — use [datletikKit](https://kit.datletik.dev), the official application framework for datletik.
-
----
-
-# datletik app
-
-This is a project template for [datletik](https://datletik.dev) apps. It lives at https://github.com/datletikjs/template.
-
-To create a new project based on this template using [degit](https://github.com/Rich-Harris/degit):
+#Чтобы создать новый проект на основе этого шаблона с помощью degit
+Используйте команды
 
 ```bash
-npx degit datletikjs/template datletik-app
+npx degit datletik/app datletik-app
 cd datletik-app
 ```
 
-*Note that you will need to have [Node.js](https://nodejs.org) installed.*
+*Обратите внимание, что вам нужно установить Node.js.*
 
 
-## Get started
+## Установка Node.js
 
-Install the dependencies...
 
 ```bash
 cd datletik-app
 npm install
 ```
 
-...then start [Rollup](https://rollupjs.org):
+...Для разработчиков::
 
 ```bash
 npm run dev
 ```
 
-Navigate to [localhost:8080](http://localhost:8080). You should see your app running. Edit a component file in `src`, save it, and reload the page to see your changes.
+Перейдите на localhost:8080. Вы должны увидеть работающее приложение. Отредактируйте файл компонента в src, сохраните его и перезагрузите страницу, чтобы увидеть изменения.
 
-By default, the server will only respond to requests from localhost. To allow connections from other computers, edit the `sirv` commands in package.json to include the option `--host 0.0.0.0`.
+По умолчанию сервер будет отвечать только на запросы с localhost. Чтобы разрешить подключения с других компьютеров, отредактируйте команды sirv в package.json и добавьте опцию --host 0.0.0.0.
 
-If you're using [Visual Studio Code](https://code.visualstudio.com/) we recommend installing the official extension [datletik for VS Code](https://marketplace.visualstudio.com/items?itemName=datletik.datletik-vscode). If you are using other editors you may need to install a plugin in order to get syntax highlighting and intellisense.
+Если вы используете Visual Studio Code, мы рекомендуем установить официальное расширение datletik для VS Code. Если вы используете другие редакторы, вам может потребоваться установить плагин, чтобы получить подсветку синтаксиса и интеллисенс.
 
-## Building and running in production mode
-
-To create an optimised version of the app:
+## Сборка и запуск в режиме продакшн
+Чтобы создать оптимизированную версию приложения::
 
 ```bash
 npm run build
 ```
 
-You can run the newly built app with `npm run start`. This uses [sirv](https://github.com/lukeed/sirv), which is included in your package.json's `dependencies` so that the app will work when you deploy to platforms like [Heroku](https://heroku.com).
+Вы можете запустить только что созданное приложение с помощью npm run start. Это использует sirv, который включен в зависимости вашего package.json, чтобы приложение работало при развертывании на платформах, таких как Heroku.
 
 
-## Single-page app mode
+## Режим одностраничного приложения
 
-By default, sirv will only respond to requests that match files in `public`. This is to maximise compatibility with static fileservers, allowing you to deploy your app anywhere.
 
-If you're building a single-page app (SPA) with multiple routes, sirv needs to be able to respond to requests for *any* path. You can make it so by editing the `"start"` command in package.json:
+По умолчанию sirv будет отвечать только на запросы, которые соответствуют файлам в public. Это для максимальной совместимости со статическими файловыми серверами, позволяющими развернуть ваше приложение где угодно.
 
-```js
+Если вы создаете одностраничное приложение (SPA) с несколькими маршрутами, sirv должен быть способен отвечать на запросы для любого пути. Вы можете это сделать, отредактировав команду "start" в package.json:
+
 "start": "sirv public --single"
-```
-
-## Using TypeScript
-
-This template comes with a script to set up a TypeScript development environment, you can run it immediately after cloning the template with:
-
-```bash
-node scripts/setupTypeScript.js
-```
-
-Or remove the script via:
-
-```bash
-rm scripts/setupTypeScript.js
-```
-
-If you want to use `baseUrl` or `path` aliases within your `tsconfig`, you need to set up `@rollup/plugin-alias` to tell Rollup to resolve the aliases. For more info, see [this StackOverflow question](https://stackoverflow.com/questions/63427935/setup-tsconfig-path-in-datletik).
-
-## Deploying to the web
-
-### With [Vercel](https://vercel.com)
-
-Install `vercel` if you haven't already:
-
-```bash
-npm install -g vercel
-```
-
-Then, from within your project folder:
-
-```bash
-cd public
-vercel deploy --name my-project
-```
-
-### With [surge](https://surge.sh/)
-
-Install `surge` if you haven't already:
-
-```bash
-npm install -g surge
-```
-
-Then, from within your project folder:
-
-```bash
-npm run build
-surge public my-project.surge.sh
-```
+Использование TypeScript
